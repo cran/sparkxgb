@@ -1,0 +1,17 @@
+0be44120fe31811b24dff9764807cb06 *DESCRIPTION
+5d6b699bed189588559ea22bea6df233 *NAMESPACE
+5671883dcc502ced614e22a110fb8dfb *R/dependencies.R
+bceac9f7a82855e4eda9e05cf5725296 *R/imports.R
+7c9c94b3fbdc97ac467d9f31613422ee *R/xgboost_classifier.R
+6e71f9681181b44419da6fd01c9c3697 *R/xgboost_regressor.R
+2b331bc3769abda08708f631e5673ce7 *README.md
+6bb0b4dc7a472663eb2f1ab667294815 *inst/java/sparkxgb-2.3-2.11.jar
+d52af5ae628cf5fae80bc88a70171956 *inst/sparkml/class_mapping.json
+9a9f97aaaec80a3067b524179a07ec92 *inst/sparkml/param_mapping.json
+ac5158763d0a0ea83d29058d0e1ed0be *java/main.scala
+3fad387957daa58b900b37132537f66d *man/xgboost_classifier.Rd
+4cc91e3a87d84eadbf9219d03c160dd4 *man/xgboost_regressor.Rd
+f1c86f914c1447231e65010cbbe327d9 *tests/testthat.R
+7977315d2c781f976ee17153b34c0f25 *tests/testthat/helper-initialize.R
+8d09d3408e999db143ab3a48f303bce0 *tests/testthat/test-save-load.R
+9f2c0094ef3b800cea6f62615bbfbdc7 *tests/testthat/test-xgboost-classifier.R
