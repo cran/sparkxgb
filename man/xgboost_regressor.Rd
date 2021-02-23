@@ -4,25 +4,57 @@
 \alias{xgboost_regressor}
 \title{XGBoost Regressor}
 \usage{
-xgboost_regressor(x, formula = NULL, eta = 0.3, gamma = 0,
-  max_depth = 6, min_child_weight = 1, max_delta_step = 0,
-  grow_policy = "depthwise", max_bins = 16, subsample = 1,
-  colsample_bytree = 1, colsample_bylevel = 1, lambda = 1,
-  alpha = 0, tree_method = "auto", sketch_eps = 0.03,
-  scale_pos_weight = 1, sample_type = "uniform",
-  normalize_type = "tree", rate_drop = 0, skip_drop = 0,
-  lambda_bias = 0, tree_limit = 0, num_round = 1, num_workers = 1,
-  nthread = 1, use_external_memory = FALSE, silent = 0,
-  custom_obj = NULL, custom_eval = NULL, missing = NaN, seed = 0,
-  timeout_request_workers = 30 * 60 * 1000, checkpoint_path = "",
-  checkpoint_interval = -1, objective = "reg:linear",
-  base_score = 0.5, train_test_ratio = 1,
-  num_early_stopping_rounds = 0, objective_type = "regression",
-  eval_metric = NULL, maximize_evaluation_metrics = FALSE,
-  base_margin_col = NULL, weight_col = NULL,
-  features_col = "features", label_col = "label",
+xgboost_regressor(
+  x,
+  formula = NULL,
+  eta = 0.3,
+  gamma = 0,
+  max_depth = 6,
+  min_child_weight = 1,
+  max_delta_step = 0,
+  grow_policy = "depthwise",
+  max_bins = 16,
+  subsample = 1,
+  colsample_bytree = 1,
+  colsample_bylevel = 1,
+  lambda = 1,
+  alpha = 0,
+  tree_method = "auto",
+  sketch_eps = 0.03,
+  scale_pos_weight = 1,
+  sample_type = "uniform",
+  normalize_type = "tree",
+  rate_drop = 0,
+  skip_drop = 0,
+  lambda_bias = 0,
+  tree_limit = 0,
+  num_round = 1,
+  num_workers = 1,
+  nthread = 1,
+  use_external_memory = FALSE,
+  silent = 0,
+  custom_obj = NULL,
+  custom_eval = NULL,
+  missing = NaN,
+  seed = 0,
+  timeout_request_workers = 30 * 60 * 1000,
+  checkpoint_path = "",
+  checkpoint_interval = -1,
+  objective = "reg:linear",
+  base_score = 0.5,
+  train_test_ratio = 1,
+  num_early_stopping_rounds = 0,
+  objective_type = "regression",
+  eval_metric = NULL,
+  maximize_evaluation_metrics = FALSE,
+  base_margin_col = NULL,
+  weight_col = NULL,
+  features_col = "features",
+  label_col = "label",
   prediction_col = "prediction",
-  uid = random_string("xgboost_regressor_"), ...)
+  uid = random_string("xgboost_regressor_"),
+  ...
+)
 }
 \arguments{
 \item{x}{A \code{spark_connection}, \code{ml_pipeline}, or a \code{tbl_spark}.}
@@ -149,20 +181,6 @@ XGBoost regressor for Spark.
 }
 \details{
 When \code{x} is a \code{tbl_spark} and \code{formula} (alternatively, \code{response} and \code{features}) is specified, the function returns a \code{ml_model} object wrapping a \code{ml_pipeline_model} which contains data pre-processing transformers, the ML predictor, and, for classification models, a post-processing transformer that converts predictions into class labels. For classification, an optional argument \code{predicted_label_col} (defaults to \code{"predicted_label"}) can be used to specify the name of the predicted label column. In addition to the fitted \code{ml_pipeline_model}, \code{ml_model} objects also contain a \code{ml_pipeline} object where the ML predictor stage is an estimator ready to be fit against data. This is utilized by \code{\link{ml_save}} with \code{type = "pipeline"} to faciliate model refresh workflows.
-}
-\examples{
-\donttest{
-library(sparkxgb)
-library(sparklyr)
-sc <- spark_connect(master = "local")
-mtcars_tbl <- copy_to(sc, mtcars)
-
-xgb_model <- xgboost_regressor(
-  mtcars_tbl,
-  mpg ~ .
-)
-}
-
 }
 \seealso{
 See \url{http://spark.apache.org/docs/latest/ml-classification-regression.html} for

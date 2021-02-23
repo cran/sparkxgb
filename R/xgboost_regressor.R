@@ -48,19 +48,6 @@
 #' @template roxlate-ml-formula-params
 #' @template roxlate-ml-predictor-params
 #' 
-#' @examples
-#' \donttest{
-#' library(sparkxgb)
-#' library(sparklyr)
-#' sc <- spark_connect(master = "local")
-#' mtcars_tbl <- copy_to(sc, mtcars)
-#' 
-#' xgb_model <- xgboost_regressor(
-#'   mtcars_tbl,
-#'   mpg ~ .
-#' )
-#' }
-#' 
 #' @export
 xgboost_regressor <- function(x, formula = NULL, eta = 0.3, gamma = 0, max_depth = 6,
                               min_child_weight = 1, max_delta_step = 0,
